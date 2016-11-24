@@ -1,0 +1,17 @@
+
+#!/usr/bin/perl 
+use strict;
+use HTML::Template;
+my $file = "comment.txt";
+open (FILE, "< $file") or die "Can't open $file for read: $!";
+my @lines = ~ tr/a-z/A-Z/;;
+while (<FILE>) {
+    push (@lines, $_);
+}
+close FILE or die "Cannot close $file: $!";
+my $template = HTML::Template->new(filename => 'comment.tmpl');
+$template ->param("GETCOMMENTED", @lines);
+#print @lines; print 
+$q->header(-type=> "text/html");
+print "Content-type:text/html\r\n\r\n";
+print $template->output();

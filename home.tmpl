@@ -1,0 +1,87 @@
+<!-- home.tmpl -->
+<html> <script type="text/javascript"> function loadXMLDoc(url) { if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari 
+xmlhttp=new XMLHttpRequest();
+}
+else {// code for IE6, IE5 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET",url,false); xmlhttp.send(null); document.getElementById('test').innerHTML=xmlhttp.responseText;
+}
+</script> <title>AN.com</title> <body bgcolor="#FFFFFF" style="font-family:verdana;font-size:12px;color:#515971;"> </br> </br> <div><img 
+src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" 
+width="60px" height="50px" style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" 
+style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" style="leftwards" alt="dalal"><img 
+src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" 
+width="60px" height="50px" style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" 
+style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" style="leftwards" alt="dalal"><img 
+src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" 
+width="60px" height="50px" style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/pon.jpg" width="60px" height="50px" 
+style="leftwards" alt="dalal"><img src="http://192.168.56.102/img/atos.jpg" align="right"></div> </br> </br> <div align="right"> <form 
+method="POST" action="log.pl">
+    <input type="submit" value="Logout"/> </form> </div> </br> <h1 align="center" 
+style="font-family:verdana;font-size:20px;font-weight:bold;">Congratulations  <TMPL_VAR NAME="USER"> !!! You are now logged into the POD Workspace</h1><p align="right">
+<script type="text/javascript">
+
+function date_time(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+       
+        result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+}
+</script>
+    <body>
+            <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
+</body>
+</p></br> 
+<table width="100%" cellpadding="0" border="0" style="font-family:verdana;font-size:11px;font-color:#033E54;">
+    <tr>
+        <td width="30%" valign="top"> <h1 style="font-weight:bold;font-family:verdana;font-size:14px;font-color:#033E54;">Standard PKI - 
+wojciech.sznurawa@atos.net - Credentials</h1> <p><a 
+href="https://cpo-lb.it-solutions.atos.net/cgi-bin/customerservice/Styleguide/plugins/Toolbox/adminlinks.pl?CHESS_REQ=true"> POD common links - 
+User Mapping, Backdoor logins... </a></p> <p><a href="https://cpo-lb.it-solutions.atos.net/cgi-bin/customerservice/service/pod/index.pl">POD 
+Forms Production</a></p> <p><a 
+href="https://cpo-lb.it-solutions.atos.net/cgi-bin/customerservice/admin/pod/view_latest_orders/show_dborderdata.pl?id_description=ticketnr&numeric_id=0004170359+&database=production&suchen=SELECT">POD 
+Forms Production</a></p> <p><a href="https://cpo-lb.it-solutions.atos.net:38014/cgi-bin/customerservice/service/pod/index.pl">POD Forms 
+Development</a></p> <p><a href="\\ww930.my-it-solutions.net\fsdfs\CS_APPL_AS_POD\03_POD\SharedArea">POD SharePoint</a></p> <p><a 
+href="https://svn.it-solutions.myatos.net/trac/podteam">POD Processes&Documentation</a></p> <p><a 
+href="https://svn.it-solutions.myatos.net/podteam/pod/trunk">POD SVN</a></p> <p><a 
+href="https://operational-service-desk.it-solutions.atos.net/">OSD </a>required authorization PKI and <a 
+href="C:\POD\Workspace\POD\passwords.txt">Password</a></p> <p><a 
+href="http://sap01117.de.it-solutions.myatos.net:9046/mid-tier/shared/login.jsp?/mid-tier/home">OSD Staging </a></p> <p><a 
+href="https://csedweb.it-solutions.atos.net/pdm_prod/?locale=en#PageMain">CSED Web Database</a></p> <p><a 
+href="https://csedweb.it-solutions.atos.net/CSAM_PROD_SAA">CSAM ROLES Database Production</a></p> <p><a 
+href="https://csedweb.it-solutions.atos.net/CSAM-STAGE">CSAM ROLES Database Staging</a></p> <p><a 
+href="https://cpo-lb.it-solutions.atos.net/cgi-bin/customerservice/admin/portal/get_error_messages.pl">CPO Get Error Messages General</a></p> 
+<p><a href="https://cpo-lb.it-solutions.atos.net:19031/cgi-bin/customerservice/admin/portal/get_error_messages.pl">CPO Get Error Messages 
+Stefan</a></p> <p><a href="https://cpo-lb.it-solutions.atos.net:38010/cgi-bin/customerservice/admin/portal/get_error_messages.pl">CPO Get Error 
+Messages Matthias</a></p> <p><a href="https://cpo-lb.it-solutions.atos.net:38014/cgi-bin/customerservice/admin/portal/get_error_messages.pl">CPO 
+Get Error Messages Janek</a></p> </td>
+		  <td width="30%" valign="top"> <h1 style="font-weight:bold;font-family:verdana;font-size:14px;font-color:#033E54;">BackEnd and 
+FrontEnd - PKI, username sznurawa <a href="C:\POD\Workspace\POD\pass.pl">MD5</a></h1> <p><a href="DEFTHW990ZOSRV.it-solutions.myatos.net"> POD 
+BackEnd Production</a></p> <p><a href="DEFTHW990WASRV.it-solutions.myatos.net">POD Staging</a></p> <p><a 
+href="DEFTHW990X2WEB.it-solutions.myatos.net">CPO Production#1</a></p> <p><a href="DEFTHW990X3WEB.it-solutions.myatos.net">CPO 
+Production#2</a></p> <p><a href="DEFTHW990X4WEB.it-solutions.myatos.net">CPO Production#3</a></p> <p><a 
+href="DEFTHW990WOWEB.it-solutions.myatos.net">CPO Staging#1</a></p> <p><a href="DEFTHW990WPWEB.it-solutions.myatos.net">CPO Staging#2</a></p> 
+<p><a href="defthw990wnweb.it-solutions.myatos.net">CPO Dev</a></p> <p><a href="https://svn.it-solutions.myatos.net/podteam/pod/trunk">POD 
+SVN</a></p></br> </td> <td width="30%" valign="top"> <div id="test"> <h2>Click to let AJAX change this text</h2> </div> <div><button 
+type="button" onclick="loadXMLDoc('ajax.pl')">get perl action</button></div> </td>
+ </tr> </br> </table> </body> </html>
