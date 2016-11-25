@@ -48,7 +48,7 @@ use JSON;
             my $dbh = DBI->connect("DBI:mysql:database=mysql;host=localhost;port=2009", "root", "wojtek29")
                 or die $DBI::errstr;
            ## my $template = HTML::Template->new(filename =>'request.html');
-            my $statement = qq{SELECT DateT, Results FROM DRESULTS ORDER BY DateT DESC};
+            my $statement = qq{SELECT DateT, Results FROM DRESULTS ORDER BY DateT DESC limit 10};
             my $sth = $dbh->prepare($statement) or die $dbh->errstr;
                 $sth->execute() or die $sth->errstr;
             #$session->param("username", $username);
@@ -76,11 +76,12 @@ use JSON;
           ##  $template->param("MESSAGE", $message);
           #  $template->param("GREETING", $greeting);
 		##	$template->param("FIRSTNAME", $firstname);
-            $template->param(ROWS => $rows);
+          #  $template->param(ROWS => $rows);
            ## $template->param(JSROWS =>  encode_json($rows));
           ##  print $session->header();
 		  print "Content-type: text/html\n\n";
-   print "$rows";
+   print encode_json($rows);
+
 
 
 
