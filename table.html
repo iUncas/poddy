@@ -28,8 +28,6 @@
 <div>
 <button type="button" onclick="loadXMLDoc('ajax.pl')">get perl action</button>
 </div> 
-<input type="button" onclick="jsdata()" value="Create Table From JSON" />
-    <div id="showData"></div>
 	</br>
 	</br>
 	<div class="containter">
@@ -57,9 +55,9 @@ else {// code for IE6, IE5 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 xmlhttp.open("GET",url,false); xmlhttp.send(null); document.getElementById('test').innerHTML=xmlhttp.responseText;
 document.getElementById('test').innerHTML=xmlhttp.responseText;
 }
-var jsdatax = xmlhttp.responseText;
-	function jsdata() {
-	$.getJSON(jsdatax, function(data){
+//var jsdatax = xmlhttp.responseText;
+	
+	$.getJSON(xmlhttp.responseText, function(data){
 	var items = [];
 	$.each(data, function(key, val){
 	items.push("<tr>");
@@ -69,7 +67,7 @@ var jsdatax = xmlhttp.responseText;
 	});
 	$("<tbody/>", {html: items.join("")}).appendTo("table");
 	});
-	}
+	
 	</script>
 	<!--<script src="https://js/bootstrap.min.js/"></script>-->
   </body>
