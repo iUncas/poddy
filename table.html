@@ -19,6 +19,34 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src=""https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	var jsdatax1 = "[{"Results":"155","DateT":"2016-11-19 23:20:00"},{"Results":"127","DateT":"2016-11-19 20:20:00"},{"DateT":"2016-11-19 15:20:00","Results":"143"},{"Results":"131","DateT":"2016-11-19 11:20:00"},{"DateT":"2016-11-19 07:20:00","Results":"121"},{"DateT":"2016-11-18 23:20:00","Results":"146"},{"Results":"134","DateT":"2016-11-18 20:20:00"},{"Results":"220","DateT":"2016-11-18 15:20:00"},{"DateT":"2016-11-18 11:20:00","Results":"211"},{"Results":"7.5","DateT":"2016-11-18 09:53:00"}]";
+	//function loadXMLDoc(url) { if (window.XMLHttpRequest) {
+// code for IE7+, Firefox, Chrome, Opera, Safari 
+//xmlhttp=new XMLHttpRequest();
+//}
+//else {// code for IE6, IE5 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+//}
+//xmlhttp.open("GET",url,false); xmlhttp.send(null); 
+//document.getElementById('test').innerHTML=xmlhttp.responseText;
+//}
+//var jsdatax = xmlhttp.responseText;
+	function jsdatax() {
+	$.getJSON(jsdatax1, function(data){
+	var items = [];
+	$.each(data, function(key, val){
+	items.push("<tr>");
+	items.push("<td id=''"+key+"''>"+val.DateT+"</td>");
+	items.push("<td id=''"+key+"''>"+val.Results+"</td>");
+	items.push("</tr>");
+	});
+	$("<tbody/>", {html: items.join("")}).appendTo("table");
+	});
+	}
+	</script>
   </head>
   <body>
     <p> <br> <br> </p>
@@ -47,34 +75,7 @@
 </tbody>
 </table>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src=""https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-	var jsdatax1 = "[{"Results":"155","DateT":"2016-11-19 23:20:00"},{"Results":"127","DateT":"2016-11-19 20:20:00"},{"DateT":"2016-11-19 15:20:00","Results":"143"},{"Results":"131","DateT":"2016-11-19 11:20:00"},{"DateT":"2016-11-19 07:20:00","Results":"121"},{"DateT":"2016-11-18 23:20:00","Results":"146"},{"Results":"134","DateT":"2016-11-18 20:20:00"},{"Results":"220","DateT":"2016-11-18 15:20:00"},{"DateT":"2016-11-18 11:20:00","Results":"211"},{"Results":"7.5","DateT":"2016-11-18 09:53:00"}]";
-	//function loadXMLDoc(url) { if (window.XMLHttpRequest) {
-// code for IE7+, Firefox, Chrome, Opera, Safari 
-//xmlhttp=new XMLHttpRequest();
-//}
-//else {// code for IE6, IE5 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-//}
-//xmlhttp.open("GET",url,false); xmlhttp.send(null); 
-//document.getElementById('test').innerHTML=xmlhttp.responseText;
-//}
-//var jsdatax = xmlhttp.responseText;
-	function jsdatax() {
-	$.getJSON(jsdatax1, function(data){
-	var items = [];
-	$.each(data, function(key, val){
-	items.push("<tr>");
-	items.push("<td id=''"+key+"''>"+val.DateT+"</td>");
-	items.push("<td id=''"+key+"''>"+val.Results+"</td>");
-	items.push("</tr>");
-	});
-	$("<tbody/>", {html: items.join("")}).appendTo("table");
-	});
-	}
-	</script>
+   
 	<!--<script src="https://js/bootstrap.min.js/"></script>-->
   </body>
 </html>
